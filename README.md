@@ -1,5 +1,5 @@
 # Aluminium
-Libraries written in C++
+A hodgepodge C++ library
 
 # Contains
 * utils

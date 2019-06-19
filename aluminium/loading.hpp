@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+namespace aluminium {
 void print_loading(std::string, int, int);
+}
 
 #endif

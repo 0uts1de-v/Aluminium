@@ -1,13 +1,15 @@
+#include "loading.hpp"
+#include <chrono>
 #include <iostream>
 #include <string>
-#include <chrono>
 #include <thread>
-#include "loading.hpp"
 
+namespace aluminium {
 std::string decorate(std::string, int);
 
-void print_loading(std::string str, int duaration_ms, int speed_ms) {
-    while (true) {
+void print_loading(std::string str, int duration_ms, int speed_ms) {
+    auto start = std::chrono::system_clock::now();
+    while (duration_ms >= std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::system_clock::now() - start).count()) {
         for (unsigned long int i = 0; i < str.size(); ++i) {
             std::cout << "\r" << decorate(str, i) << std::flush;
             std::this_thread::sleep_for(std::chrono::milliseconds(speed_ms));
@@ -16,11 +18,11 @@ void print_loading(std::string str, int duaration_ms, int speed_ms) {
 }
 
 std::string decorate(std::string str, int i) {
-    if (97 > str[i] or str [i] > 122) {
+    if (97 > str[i] or str[i] > 122) {
         return str;
-    }
-    else {
+    } else {
         str[i] -= 32;
         return str;
     }
 }
+} // namespace aluminium
