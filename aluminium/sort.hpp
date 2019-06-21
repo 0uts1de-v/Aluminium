@@ -60,6 +60,21 @@ void comb(T b, T e) {
 }
 
 template <class T>
+void insertion(T b, T e) {
+    auto i = b;
+    auto tmp = *b;
+    for (auto it = b; it < e; ++it) {
+        i = it - 1;
+        tmp = *it;
+        while (i >= b && *i > tmp) {
+            *(i + 1) = *i;
+            --i;
+        }
+        *(i + 1) = tmp;
+    }
+}
+
+template <class T>
 void tmp(T b, T e) {
 }
 
