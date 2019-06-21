@@ -75,6 +75,21 @@ void insertion(T b, T e) {
 }
 
 template <class T>
+void selection(T b, T e) {
+    auto min = b;
+    for (auto it = b; it < e - 1; ++it)
+    {
+        min = it;
+        for (auto it_2 = it + 1; it_2 < e; ++it_2)
+        {
+            if (*it_2 < *min)
+                min = it_2;
+        }
+        std::swap(*it, *min);
+    }
+}
+
+template <class T>
 void tmp(T b, T e) {
 }
 

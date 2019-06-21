@@ -18,7 +18,8 @@ int main() {
     //aluminium::sort::quick(a.begin(), a.end());
     //aluminium::sort::bubble(a.begin(), a.end());
     //aluminium::sort::comb(a.begin(), a.end());
-    aluminium::sort::insertion(a.begin(), a.end());
+    //aluminium::sort::insertion(a.begin(), a.end());
+    aluminium::sort::selection(a.begin(), a.end());
     for (auto i : a) {
         std::cout << i << std::endl;
     }
