@@ -23,6 +23,20 @@ void quick(T b, T e) {
     quick(l + 1, e);
 }
 
+template <class T>
+void bubble(T b, T e) {
+    bool swapped = true;
+    while (swapped) {
+        swapped = false;
+        for (auto it = b; it != e - 1; ++it) {
+            if (*it > *(it + 1)) {
+                std::swap(*it, *(it + 1));
+                swapped = true;
+            }
+        }
+    }
+}
+
 } // namespace sort
 } // namespace aluminium
 
