@@ -13,7 +13,7 @@ int main() {
     std::cout << aluminium::math::pi(3) << std::endl;
     std::vector<int> a{13, 32, 272, 2, 2223, 22};
     aluminium::sort::quick_sort(a.begin(), a.end());
-    for (auto i: a) {
+    for (auto i : a) {
         std::cout << i << std::endl;
     }
 

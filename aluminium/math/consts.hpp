@@ -9,8 +9,7 @@ namespace math {
 double pi(unsigned int);
 double e(unsigned int);
 
-}
-}
+} // namespace math
+} // namespace aluminium
 
 #endif
-

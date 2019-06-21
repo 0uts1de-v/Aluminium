@@ -29,6 +29,6 @@ std::string decorate(std::string str, int i) {
     }
 }
 
-}
+} // namespace aluminium
 
 #endif

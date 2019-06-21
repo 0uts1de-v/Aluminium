@@ -1,6 +1,6 @@
-#include <iostream>
-#include <cmath>
 #include "consts.hpp"
+#include <cmath>
+#include <iostream>
 
 namespace aluminium {
 namespace math {
@@ -22,5 +22,5 @@ double e(unsigned int precision) {
     return round_n(e, precision);
 }
 
-}
-}
+} // namespace math
+} // namespace aluminium
