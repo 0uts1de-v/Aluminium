@@ -19,8 +19,8 @@ void quick(T b, T e) {
         std::swap(*l, *r);
     }
     std::swap(*b, *l);
-    quick_sort(b, l);
-    quick_sort(l + 1, e);
+    quick(b, l);
+    quick(l + 1, e);
 }
 
 } // namespace sort
