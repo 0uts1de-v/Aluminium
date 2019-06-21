@@ -1,5 +1,5 @@
-#ifndef ALUMINIUM_SORT_QUICK
-#define ALUMINIUM_SORT_QUICK
+#ifndef ALUMINIUM_SORT
+#define ALUMINIUM_SORT
 
 #include <utility>
 
@@ -35,6 +35,32 @@ void bubble(T b, T e) {
             }
         }
     }
+}
+
+template <class T>
+void comb(T b, T e) {
+    unsigned int h = (e - b) / 1.3;
+    bool swapped = true;
+    while (swapped || h != 1) {
+        swapped = false;
+        for (auto it = b; it + h < e; ++it) {
+            if (*it > *(it + h)) {
+                std::swap(*it, *(it + h));
+                swapped = true;
+            }
+        }
+        if (h != 1) {
+            h /= 1.3;
+        }
+        if (h == 9 || h == 10) {
+            h = 11;
+        }
+    }
+
+}
+
+template <class T>
+void tmp(T b, T e) {
 }
 
 } // namespace sort
