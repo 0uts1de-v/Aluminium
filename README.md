@@ -1,5 +1,5 @@
 # Aluminium
-A hodgepodge C++ library
+A C++ library
 
 # How to Use
 ```bash
