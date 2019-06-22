@@ -90,6 +90,25 @@ void selection(T b, T e) {
 }
 
 template <class T>
+void gnome(T b, T e) {
+    auto it = b;
+    while (it < e - 1)
+    {
+        if (*it < *(it + 1))
+        {
+            ++it;
+        }
+        else
+        {
+            std::swap(*it, *(it + 1));
+            --it;
+            if (it == b - 1)
+                ++it;
+        }
+    }
+}
+
+template <class T>
 void tmp(T b, T e) {
 }
 
