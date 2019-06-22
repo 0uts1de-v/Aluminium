@@ -6,6 +6,7 @@
 #include "aluminium/loading.hpp"
 #include "aluminium/math/consts.hpp"
 #include "aluminium/sort.hpp"
+#include "aluminium/search.hpp"
 
 int main() {
     aluminium::hello();
@@ -24,6 +25,9 @@ int main() {
     for (auto i : a) {
         std::cout << i << std::endl;
     }
+
+    std::cout << aluminium::search::linear(a.begin(), a.end(), 32) << std::endl;
+    std::cout << aluminium::search::linear(a.begin(), a.end(), 34) << std::endl;
 
     return 0;
 }
