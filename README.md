@@ -8,7 +8,7 @@ This library is published under MIT licence.
 
 # How to Use
 
-First, write your code and add your code into `CMakeLists.txt`.
+First, write your code and add it into `CMakeLists.txt`.
 
 Then,
 
