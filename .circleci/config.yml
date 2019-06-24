@@ -9,7 +9,5 @@ jobs:
         steps:
             - checkout
             - run: mkdir build
-            - run: cd build
-            - run: cmake ..
-            - run: make
-            - run: ./a.out
+            - run: cd build && cmake .. && make
+            - run: build/a.out
