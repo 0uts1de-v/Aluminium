@@ -4,10 +4,12 @@ version: 2.1
 jobs:
     build:
         docker:
-            - image: 0uts1de/gcc-cmake
-        working_directory: ~/work
+            - image: 0uts1de/gcc-cmake:latest
+        working_directory: /Aluminium
         steps:
             - checkout
+            - run: mkdir build
+            - rum: cd build
             - run: cmake ..
             - run: make
             - run: ./a.out
