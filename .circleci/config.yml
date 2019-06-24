@@ -8,7 +8,6 @@ jobs:
         working_directory: ~/Aluminium
         steps:
             - checkout
-            - run: cd Aluminium
             - run: mkdir build
             - run: cd build
             - run: cmake ..
