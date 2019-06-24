@@ -5,7 +5,7 @@ jobs:
     build:
         docker:
             - image: 0uts1de/gcc-cmake:latest
-        working_directory: /Aluminium
+        working_directory: ~/Aluminium
         steps:
             - checkout
             - run: cd Aluminium
