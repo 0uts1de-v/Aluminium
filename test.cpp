@@ -27,10 +27,13 @@ int main() {
         std::cout << i << std::endl;
     }
 
-    std::cout << aluminium::search::linear(a.begin(), a.end(), 32) << std::endl;
-    std::cout << aluminium::search::linear(a.begin(), a.end(), 34) << std::endl;
+    std::cout << aluminium::search::linear_search(a.begin(), a.end(), 32) << std::endl;
+    std::cout << aluminium::search::linear_search(a.begin(), a.end(), 34) << std::endl;
 
-    std::cout << aluminium::base64::encode("test") << std::endl;
+    std::cout << aluminium::search::binary_search(a.begin(), a.end(), 32) << std::endl;
+    std::cout << aluminium::search::binary_search(a.begin(), a.end(), 34) << std::endl;
+
+    //std::cout << aluminium::base64::encode("test") << std::endl;
 
     return 0;
 }
