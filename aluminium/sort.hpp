@@ -7,7 +7,7 @@ namespace aluminium {
 namespace sort {
 
 template <class T>
-void quick(T b, T e) {
+void quicik_sort(T b, T e) {
     if (b == e)
         return;
     auto l = b, r = e - 1;
@@ -24,7 +24,7 @@ void quick(T b, T e) {
 }
 
 template <class T>
-void bubble(T b, T e) {
+void bubble_sort(T b, T e) {
     bool swapped = true;
     while (swapped) {
         swapped = false;
@@ -38,7 +38,7 @@ void bubble(T b, T e) {
 }
 
 template <class T>
-void comb(T b, T e) {
+void comb_sort(T b, T e) {
     unsigned int h = (e - b) / 1.3;
     bool swapped = true;
     while (swapped || h != 1) {
@@ -60,7 +60,7 @@ void comb(T b, T e) {
 }
 
 template <class T>
-void insertion(T b, T e) {
+void insertion_sort(T b, T e) {
     auto i = b;
     auto tmp = *b;
     for (auto it = b; it < e; ++it) {
@@ -75,7 +75,7 @@ void insertion(T b, T e) {
 }
 
 template <class T>
-void selection(T b, T e) {
+void selection_sort(T b, T e) {
     auto min = b;
     for (auto it = b; it < e - 1; ++it)
     {
@@ -90,7 +90,7 @@ void selection(T b, T e) {
 }
 
 template <class T>
-void gnome(T b, T e) {
+void gnome_sort(T b, T e) {
     auto it = b;
     while (it < e - 1)
     {
@@ -108,9 +108,21 @@ void gnome(T b, T e) {
     }
 }
 
+/*
+template <class T>
+void merge_sort(T b, T e) {
+    if (left + 1 < right) {
+        auto mid = (left + right) / 2;
+        merge(left, mid);
+        merge(mid, right);
+        std::merge(A, left, mid, right);
+    }
+}
+
 template <class T>
 void tmp(T b, T e) {
 }
+*/
 
 } // namespace sort
 } // namespace aluminium
