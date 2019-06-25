@@ -7,7 +7,7 @@ namespace aluminium {
 namespace sort {
 
 template <class T>
-void quicik_sort(T b, T e) {
+void quick_sort(T b, T e) {
     if (b == e)
         return;
     auto l = b, r = e - 1;
