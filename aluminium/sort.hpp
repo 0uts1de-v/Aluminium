@@ -19,8 +19,8 @@ void quicik_sort(T b, T e) {
         std::swap(*l, *r);
     }
     std::swap(*b, *l);
-    quick(b, l);
-    quick(l + 1, e);
+    quick_sort(b, l);
+    quick_sort(l + 1, e);
 }
 
 template <class T>
@@ -113,8 +113,8 @@ template <class T>
 void merge_sort(T b, T e) {
     if (left + 1 < right) {
         auto mid = (left + right) / 2;
-        merge(left, mid);
-        merge(mid, right);
+        merge_sort(left, mid);
+        merge_sort(mid, right);
         std::merge(A, left, mid, right);
     }
 }
