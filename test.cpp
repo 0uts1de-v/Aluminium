@@ -1,6 +1,9 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <algorithm>
+#include <numeric>
+#include <random>
 
 #include "aluminium/hello.hpp"
 #include "aluminium/loading.hpp"
@@ -16,7 +19,11 @@ int main() {
 
     std::cout << std::setprecision(11) << "pi = " << aluminium::math::pi(10) << "\ne = " << aluminium::math::e(10) << std::endl;
 
-    std::vector<int> a{13, 32, 272, 2, 2223, 22};
+    std::vector<int> a(100);
+    std::iota(a.begin(), a.end(), 0);
+    std::random_device seed_gen;
+    std::mt19937 engine(seed_gen());
+    std::shuffle(a.begin(), a.end(), engine);
     //aluminium::sort::quick_sort(a.begin(), a.end());
     //aluminium::sort::bubble_sort(a.begin(), a.end());
     //aluminium::sort::comb_sort(a.begin(), a.end());
@@ -25,14 +32,15 @@ int main() {
     //aluminium::sort::gnome_sort(a.begin(), a.end());
     aluminium::sort::stooge_sort(a.begin(), a.end());
     for (auto i : a) {
-        std::cout << i << std::endl;
+        std::cout << i << ", " << std::flush;
     }
+    std::cout << std::endl;
 
-    std::cout << aluminium::search::linear_search(a.begin(), a.end(), 32) << std::endl;
-    std::cout << aluminium::search::linear_search(a.begin(), a.end(), 34) << std::endl;
+    std::cout << aluminium::search::linear_search(a.begin(), a.end(), 50) << std::endl;
+    std::cout << aluminium::search::linear_search(a.begin(), a.end(), 100) << std::endl;
 
-    std::cout << aluminium::search::binary_search(a.begin(), a.end(), 32) << std::endl;
-    std::cout << aluminium::search::binary_search(a.begin(), a.end(), 34) << std::endl;
+    std::cout << aluminium::search::binary_search(a.begin(), a.end(), 50) << std::endl;
+    std::cout << aluminium::search::binary_search(a.begin(), a.end(), 100) << std::endl;
 
     //std::cout << aluminium::base64::encode("test") << std::endl;
 
