@@ -17,12 +17,13 @@ int main() {
     std::cout << std::setprecision(11) << "pi = " << aluminium::math::pi(10) << "\ne = " << aluminium::math::e(10) << std::endl;
 
     std::vector<int> a{13, 32, 272, 2, 2223, 22};
-    aluminium::sort::quick_sort(a.begin(), a.end());
+    //aluminium::sort::quick_sort(a.begin(), a.end());
     //aluminium::sort::bubble_sort(a.begin(), a.end());
     //aluminium::sort::comb_sort(a.begin(), a.end());
     //aluminium::sort::insertion_sort(a.begin(), a.end());
     //aluminium::sort::selection_sort(a.begin(), a.end());
     //aluminium::sort::gnome_sort(a.begin(), a.end());
+    aluminium::sort::stooge_sort(a.begin(), a.end());
     for (auto i : a) {
         std::cout << i << std::endl;
     }

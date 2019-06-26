@@ -108,6 +108,20 @@ void gnome_sort(T b, T e) {
     }
 }
 
+template <class T>
+void stooge_sort(T b, T e) {
+    if (*b > *(e - 1)) {
+        std::swap(*b, *(e - 1));
+    }
+    if (e - b > 2) {
+        int t = (e - b) / 3;
+        stooge_sort(b, e - t);
+        stooge_sort(b + t, e);
+        stooge_sort(b, e - t);
+    }
+}
+
+
 /*
 template <class T>
 void merge_sort(T b, T e) {
