@@ -121,6 +121,19 @@ void stooge_sort(T b, T e) {
     }
 }
 
+template <class T>
+void slow_sort(T b, T e) {
+    if (b >= e) {
+        return;
+    }
+    auto m = b + (e - b) / 2;
+    slow_sort(b, m);
+    slow_sort(m + 1, e);
+    if (*m > *e) {
+        std::swap(*m, *e);
+    }
+    slow_sort(b, e - 1);
+}
 
 /*
 template <class T>
