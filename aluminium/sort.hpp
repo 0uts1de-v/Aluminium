@@ -135,6 +135,27 @@ void slow_sort(T b, T e) {
     slow_sort(b, e - 1);
 }
 
+template <class T>
+void bucket_sort(T b, T e) {
+    int max = -1;
+    for (auto it = b; it < e; ++it) {
+        if (max < *it) {
+            max = *it;
+        }
+    }
+    unsigned int bucket[max +1]{0};
+    for (auto it = b; it < e; ++it) {
+        ++bucket[*(it)];
+    }
+    int k = 0;
+    for (int i = 0; i <= max; ++i) {
+        for (int j = 0; j < bucket[i]; ++j) {
+            *(b + k) = i;
+            ++k;
+        }
+    }
+}
+
 /*
 template <class T>
 void merge_sort(T b, T e) {
