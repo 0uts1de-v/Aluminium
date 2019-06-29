@@ -2,6 +2,7 @@
 #define ALUMINIUM_SORT
 
 #include <utility>
+#include <vector>
 
 namespace aluminium {
 namespace sort {
@@ -143,7 +144,7 @@ void bucket_sort(T b, T e) {
             max = *it;
         }
     }
-    unsigned int bucket[max +1]{0};
+    std::vector<unsigned int> bucket(max +1);
     for (auto it = b; it < e; ++it) {
         ++bucket[*(it)];
     }
