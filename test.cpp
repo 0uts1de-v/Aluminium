@@ -10,7 +10,7 @@
 #include "aluminium/math/consts.hpp"
 #include "aluminium/sort.hpp"
 #include "aluminium/search.hpp"
-//#include "aluminium/base64.hpp"
+#include "aluminium/base64.hpp"
 
 int main() {
     aluminium::hello();
@@ -46,7 +46,8 @@ int main() {
     std::cout << aluminium::search::binary_search(a.begin(), a.end(), 50) << std::endl;
     std::cout << aluminium::search::binary_search(a.begin(), a.end(), 100) << std::endl;
 
-    //std::cout << aluminium::base64::encode("test") << std::endl;
+    std::cout << aluminium::base64::base64encode("Aluminium::base64") << std::endl;
+    std::cout << aluminium::base64::base64encode_url("Aluminium::base64") << std::endl;
 
     return 0;
 }
