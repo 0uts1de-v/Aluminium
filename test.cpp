@@ -50,6 +50,7 @@ int main() {
     std::cout << aluminium::base64::base64encode_url("Aluminium::base64") << std::endl;
 
     std::cout << aluminium::base64::base64decode("QWx1bWluaXVtOjpiYXNlNjQ=") << std::endl;
+    std::cout << aluminium::base64::base64decode("QWx1bWluaXVtOjpiYXNlNjQ") << std::endl;
 
     return 0;
 }
