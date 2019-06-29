@@ -150,7 +150,7 @@ void bucket_sort(T b, T e) {
     }
     int k = 0;
     for (int i = 0; i <= max; ++i) {
-        for (int j = 0; j < bucket[i]; ++j) {
+        for (unsigned int j = 0; j < bucket[i]; ++j) {
             *(b + k) = i;
             ++k;
         }
