@@ -5,12 +5,7 @@
 #include <numeric>
 #include <random>
 
-#include "aluminium/hello.hpp"
-#include "aluminium/loading.hpp"
-#include "aluminium/math/consts.hpp"
-#include "aluminium/sort.hpp"
-#include "aluminium/search.hpp"
-#include "aluminium/base64.hpp"
+#include "aluminium/aluminium.hpp"
 
 int main() {
     aluminium::hello();
@@ -50,7 +45,12 @@ int main() {
     std::cout << aluminium::base64::base64encode_url("Aluminium::base64") << std::endl;
 
     std::cout << aluminium::base64::base64decode("QWx1bWluaXVtOjpiYXNlNjQ=") << std::endl;
-    std::cout << aluminium::base64::base64decode("QWx1bWluaXVtOjpiYXNlNjQ") << std::endl;
+    std::cout << aluminium::base64::base64decode_url("QWx1bWluaXVtOjpiYXNlNjQ") << std::endl;
+
+    for (int i = 0; i < 100; ++i) {
+        std::cout << aluminium::random::xorshift() << ", ";
+    }
+    std::cout << std::endl;
 
     return 0;
 }

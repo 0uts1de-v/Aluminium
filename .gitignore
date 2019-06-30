@@ -34,4 +34,5 @@
 # Build Folder
 /build
 
+/test
 .c4droid
