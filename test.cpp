@@ -1,9 +1,9 @@
+#include <algorithm>
 #include <iomanip>
 #include <iostream>
-#include <vector>
-#include <algorithm>
 #include <numeric>
 #include <random>
+#include <vector>
 
 #include "aluminium/aluminium.hpp"
 
@@ -13,7 +13,7 @@ int main() {
     //std::cout << std::endl;
 
     std::cout << std::setprecision(11) << "pi = " << aluminium::math::pi(10) << "\ne = " << aluminium::math::e(10) << std::endl;
-    
+
     std::vector<int> a(100), b(50);
     std::iota(a.begin(), a.end(), 0);
     std::iota(b.begin(), b.end(), 0);

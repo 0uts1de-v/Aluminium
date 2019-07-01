@@ -12,8 +12,8 @@ std::uint32_t xorshift() {
     x ^= (x << 15);
     return x;
 }
-    
-}
-}
+
+} // namespace random
+} // namespace aluminium
 
 #endif

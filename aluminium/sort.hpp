@@ -57,7 +57,6 @@ void comb_sort(T b, T e) {
             h = 11;
         }
     }
-
 }
 
 template <class T>
@@ -78,11 +77,9 @@ void insertion_sort(T b, T e) {
 template <class T>
 void selection_sort(T b, T e) {
     auto min = b;
-    for (auto it = b; it < e - 1; ++it)
-    {
+    for (auto it = b; it < e - 1; ++it) {
         min = it;
-        for (auto it_2 = it + 1; it_2 < e; ++it_2)
-        {
+        for (auto it_2 = it + 1; it_2 < e; ++it_2) {
             if (*it_2 < *min)
                 min = it_2;
         }
@@ -93,14 +90,10 @@ void selection_sort(T b, T e) {
 template <class T>
 void gnome_sort(T b, T e) {
     auto it = b;
-    while (it < e - 1)
-    {
-        if (*it < *(it + 1))
-        {
+    while (it < e - 1) {
+        if (*it < *(it + 1)) {
             ++it;
-        }
-        else
-        {
+        } else {
             std::swap(*it, *(it + 1));
             --it;
             if (it == b - 1)
@@ -144,7 +137,7 @@ void bucket_sort(T b, T e) {
             max = *it;
         }
     }
-    std::vector<unsigned int> bucket(max +1);
+    std::vector<unsigned int> bucket(max + 1);
     for (auto it = b; it < e; ++it) {
         ++bucket[*(it)];
     }
