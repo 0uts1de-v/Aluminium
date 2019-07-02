@@ -47,8 +47,11 @@ int main() {
     std::cout << aluminium::base64::base64decode("QWx1bWluaXVtOjpiYXNlNjQ=") << std::endl;
     std::cout << aluminium::base64::base64decode_url("QWx1bWluaXVtOjpiYXNlNjQ") << std::endl;
 
+    aluminium::random::xorshift xs;
+    //aluminium::random::LCGs lcgs;
     for (int i = 0; i < 100; ++i) {
-        std::cout << aluminium::random::xorshift() << ", ";
+        //xs.srand(1);
+        std::cout << xs.rand() << ", ";
     }
     std::cout << std::endl;
 
