@@ -5,13 +5,13 @@
 namespace aluminium {
 namespace random {
 
-
 class xorshift {
-    private:
-        std::uint32_t x = 2463534242;
-    public:
-        void srand(std::uint32_t seed);
-        std::uint32_t rand();
+  private:
+    std::uint32_t x = 2463534242;
+
+  public:
+    void srand(std::uint32_t seed);
+    std::uint32_t rand();
 };
 
 void xorshift::srand(std::uint32_t seed) {
@@ -25,13 +25,13 @@ std::uint32_t xorshift::rand() {
     return x;
 }
 
-
 class LCGs {
-    private:
-        std::uint32_t x = 123456789;
-    public:
-        void srand(std::uint32_t seed);
-        std::uint32_t rand();
+  private:
+    std::uint32_t x = 123456789;
+
+  public:
+    void srand(std::uint32_t seed);
+    std::uint32_t rand();
 };
 
 void LCGs::srand(std::uint32_t seed) {
@@ -46,7 +46,6 @@ std::uint32_t LCGs::rand() {
 
     return x;
 }
-
 
 } // namespace random
 } // namespace aluminium

@@ -11,14 +11,12 @@
 namespace aluminium {
 namespace util {
 
-
 // this function is same as std::erase_if() in C++20 or later.
 // use this function only if you are using C++17 or earlier.
 template <class CharT, class Traits, class Allocator, class Predicate>
 void erase_if(std::basic_string<CharT, Traits, Allocator> &c, Predicate pred) {
     c.erase(std::remove_if(c.begin(), c.end(), pred), c.end());
 }
-
 
 // log level 0: INFO
 //           1: WARN
@@ -39,30 +37,29 @@ void log(std::string s, int level = -1) {
     file << "[" << std::put_time(std::localtime(&in_time_t), "%Y-%m-%d %X") << "] ";
 
     switch (level) {
-        case 0:
-            file << "[INFO] ";
-            break;
-        case 1:
-            file << "[WARN] ";
-            break;
-        case 2:
-            file << "[ERROR] ";
-            break;
-        case 3:
-            file << "[FATAL] ";
-            break;
-        case 4:
-            file << "[DEBUG] ";
-            break;
-        case 5:
-            file << "[TRACE] ";
-            break;
-        default:
-            break;
+    case 0:
+        file << "[INFO] ";
+        break;
+    case 1:
+        file << "[WARN] ";
+        break;
+    case 2:
+        file << "[ERROR] ";
+        break;
+    case 3:
+        file << "[FATAL] ";
+        break;
+    case 4:
+        file << "[DEBUG] ";
+        break;
+    case 5:
+        file << "[TRACE] ";
+        break;
+    default:
+        break;
     }
     file << s << "\n";
 }
-
 
 } // namespace util
 } // namespace aluminium
