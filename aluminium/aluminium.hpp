@@ -1,4 +1,5 @@
 #ifndef ALUMINIUM
+#define ALUMINIUM
 
 #include "base64.hpp"
 #include "hello.hpp"
@@ -9,5 +10,4 @@
 #include "sort.hpp"
 #include "util.hpp"
 
-#define ALUMINIUM
 #endif

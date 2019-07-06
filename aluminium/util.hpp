@@ -61,6 +61,19 @@ void log(std::string s, int level = -1) {
     file << s << "\n";
 }
 
+// split a string into vector
+std::vector<std::string> split(const std::string &str, const char sep) {
+    std::vector<std::string> result;
+    std::stringstream ss(str);
+    std::string buf;
+
+    while(std::getline(ss, buf, sep)) {
+        result.push_back(buf);
+    }
+
+    return result;
+}
+
 } // namespace util
 } // namespace aluminium
 

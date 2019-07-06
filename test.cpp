@@ -55,7 +55,13 @@ int main() {
     }
     std::cout << std::endl;
 
-    aluminium::util::log("test", 0);
+    //aluminium::util::log("test", 0);
+    
+    std::vector<std::string> s;
+    s = aluminium::util::split("hello,world,1,2 2,3 3 3", ',');
+    for (const auto &i : s) {
+        std::cout << i << std::endl;
+    }
 
     return 0;
 }
