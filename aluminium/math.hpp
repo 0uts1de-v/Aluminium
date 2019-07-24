@@ -1,6 +1,7 @@
-#include "consts.hpp"
+#ifndef ALUMINIUM_MATH
+#define ALUMINIUM_MATH
+
 #include <cmath>
-#include <iostream>
 
 namespace aluminium {
 namespace math {
@@ -24,3 +25,5 @@ double e(unsigned int precision) {
 
 } // namespace math
 } // namespace aluminium
+
+#endif

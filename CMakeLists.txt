@@ -4,5 +4,4 @@ add_definitions("-Wall -Wextra -std=c++17")
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_executable(a.out
     test.cpp
-    aluminium/math/consts.cpp
 )
