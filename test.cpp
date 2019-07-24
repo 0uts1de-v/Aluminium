@@ -63,5 +63,9 @@ int main() {
         std::cout << i << std::endl;
     }
 
+    std::cout << "0! = " << aluminium::math::factorial(0) << std::endl;
+    std::cout << "1! = " << aluminium::math::factorial(1) << std::endl;
+    std::cout << "18! = " << aluminium::math::factorial(18) << std::endl;
+
     return 0;
 }

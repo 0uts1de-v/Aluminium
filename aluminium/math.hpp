@@ -23,6 +23,14 @@ double e(unsigned int precision) {
     return round_n(e, precision);
 }
 
+unsigned long long int factorial(unsigned int n) {
+    unsigned long long int ans = 1;
+    for (unsigned int i = 1; i <= n; ++i) {
+        ans *= i;
+    }
+    return ans;
+}
+
 } // namespace math
 } // namespace aluminium
 
