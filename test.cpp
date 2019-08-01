@@ -14,7 +14,7 @@ int main() {
 
     std::cout << std::setprecision(11) << "pi = " << aluminium::math::pi(10) << "\ne = " << aluminium::math::e(10) << std::endl;
 
-    std::vector<int> a(100), b(50);
+    std::vector<int> a(100), b(50), stalin;
     std::iota(a.begin(), a.end(), 0);
     std::iota(b.begin(), b.end(), 0);
     std::copy(b.begin(), b.end(), std::back_inserter(a));
@@ -29,10 +29,16 @@ int main() {
     //aluminium::sort::gnome_sort(a.begin(), a.end());
     //aluminium::sort::stooge_sort(a.begin(), a.end());
     //aluminium::sort::slow_sort(a.begin(), a.end() - 1);
-    aluminium::sort::bucket_sort(a.begin(), a.end());
+    //aluminium::sort::bucket_sort(a.begin(), a.end());
+    aluminium::sort::stalin_sort(a, stalin);
+    for (auto i : stalin) {
+        std::cout << i << ", " << std::flush;
+    }
+    /*
     for (auto i : a) {
         std::cout << i << ", " << std::flush;
     }
+    */
     std::cout << std::endl;
 
     std::cout << aluminium::search::linear_search(a.begin(), a.end(), 50) << std::endl;

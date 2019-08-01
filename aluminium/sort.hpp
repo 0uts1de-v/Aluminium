@@ -150,6 +150,18 @@ void bucket_sort(T b, T e) {
     }
 }
 
+template <class T>
+void stalin_sort(const std::vector<T> &b, std::vector<T> &a) { // before, after
+    auto tmp = b.at(0);
+    a.push_back(tmp);
+    for (unsigned int i = 1; i < b.size(); ++i) {
+        if (b.at(i) >= tmp) {
+            tmp = b.at(i);
+            a.push_back(tmp);
+        }
+    }
+}
+
 /*
 template <class T>
 void merge_sort(T b, T e) {
