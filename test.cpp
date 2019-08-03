@@ -30,12 +30,15 @@ int main() {
     //aluminium::sort::stooge_sort(a.begin(), a.end());
     //aluminium::sort::slow_sort(a.begin(), a.end() - 1);
     //aluminium::sort::bucket_sort(a.begin(), a.end());
-    aluminium::sort::stalin_sort(a, stalin);
-    for (auto i : stalin) {
+    
+    aluminium::sort::hitler_sort(a.begin(), a.end());
+
+    for (auto i : a) {
         std::cout << i << ", " << std::flush;
     }
+    //aluminium::sort::stalin_sort(a, stalin);
     /*
-    for (auto i : a) {
+    for (auto i : stalin) {
         std::cout << i << ", " << std::flush;
     }
     */
