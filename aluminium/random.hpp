@@ -2,6 +2,7 @@
 #define ALUMINIUM_RANDOM
 
 #include <cstdint>
+
 namespace aluminium {
 namespace random {
 

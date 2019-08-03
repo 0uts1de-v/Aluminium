@@ -26,6 +26,8 @@ $ make
 
 * random
 
+* search
+
 * sort
 
 * utils
