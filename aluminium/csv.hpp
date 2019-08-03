@@ -8,11 +8,10 @@ namespace aluminium {
 namespace csv {
 
 class csv {
-    public:
-
+  public:
 }
 
-}
-}
+} // namespace csv
+} // namespace aluminium
 
 #endif

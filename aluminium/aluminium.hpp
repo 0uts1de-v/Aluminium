@@ -20,6 +20,6 @@ using namespace aluminium::search;
 using namespace aluminium::sort;
 using namespace aluminium::util;
 
-}
+} // namespace al
 
 #endif

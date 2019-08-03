@@ -67,7 +67,7 @@ std::vector<std::string> split(const std::string &str, const char sep) {
     std::stringstream ss(str);
     std::string buf;
 
-    while(std::getline(ss, buf, sep)) {
+    while (std::getline(ss, buf, sep)) {
         result.push_back(buf);
     }
 

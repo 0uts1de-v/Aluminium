@@ -168,8 +168,7 @@ void hitler_sort(T b, T e) {
     for (auto it = b; it < e; ++it) {
         if (*it < tmp) {
             *it = tmp;
-        }
-        else if (*it > tmp) {
+        } else if (*it > tmp) {
             tmp = *it;
         }
     }
