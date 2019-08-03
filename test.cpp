@@ -9,7 +9,7 @@
 
 int main() {
     al::hello();
-    //aluminium::print_loading("hello world", 1000, 50);
+    //al::print_loading("hello world", 1000, 50);
     //std::cout << std::endl;
 
     std::cout << std::setprecision(11) << "pi = " << al::pi(10) << "\ne = " << al::e(10) << std::endl;
@@ -21,21 +21,21 @@ int main() {
     std::random_device seed_gen;
     std::mt19937 engine(seed_gen());
     std::shuffle(a.begin(), a.end(), engine);
-    aluminium::sort::quick_sort(a.begin(), a.end());
-    //aluminium::sort::bubble_sort(a.begin(), a.end());
-    //aluminium::sort::comb_sort(a.begin(), a.end());
-    //aluminium::sort::insertion_sort(a.begin(), a.end());
-    //aluminium::sort::selection_sort(a.begin(), a.end());
-    //aluminium::sort::gnome_sort(a.begin(), a.end());
-    //aluminium::sort::stooge_sort(a.begin(), a.end());
-    //aluminium::sort::slow_sort(a.begin(), a.end() - 1);
-    //aluminium::sort::bucket_sort(a.begin(), a.end());
+    al::quick_sort(a.begin(), a.end());
+    //al::bubble_sort(a.begin(), a.end());
+    //al::comb_sort(a.begin(), a.end());
+    //al::insertion_sort(a.begin(), a.end());
+    //al::selection_sort(a.begin(), a.end());
+    //al::gnome_sort(a.begin(), a.end());
+    //al::stooge_sort(a.begin(), a.end());
+    //al::slow_sort(a.begin(), a.end() - 1);
+    //al::bucket_sort(a.begin(), a.end());
     //al::hitler_sort(a.begin(), a.end());
 
     for (auto i : a) {
         std::cout << i << ", " << std::flush;
     }
-    //aluminium::sort::stalin_sort(a, stalin);
+    //al::stalin_sort(a, stalin);
     /*
     for (auto i : stalin) {
         std::cout << i << ", " << std::flush;
@@ -49,21 +49,21 @@ int main() {
     std::cout << al::binary_search(a.begin(), a.end(), 50) << std::endl;
     std::cout << al::binary_search(a.begin(), a.end(), 100) << std::endl;
 
-    std::cout << al::base64encode("Aluminium::base64") << std::endl;
-    std::cout << al::base64encode_url("Aluminium::base64") << std::endl;
+    std::cout << al::base64encode("al::base64") << std::endl;
+    std::cout << al::base64encode_url("al::base64") << std::endl;
 
     std::cout << al::base64decode("QWx1bWluaXVtOjpiYXNlNjQ=") << std::endl;
     std::cout << al::base64decode_url("QWx1bWluaXVtOjpiYXNlNjQ") << std::endl;
 
     al::xorshift xs;
-    //aluminium::random::LCGs lcgs;
+    //al::LCGs lcgs;
     for (int i = 0; i < 100; ++i) {
         //xs.srand(1);
         std::cout << xs.rand() << ", ";
     }
     std::cout << std::endl;
 
-    //aluminium::util::log("test", 0);
+    //al::log("test", 0);
 
     std::vector<std::string> s;
     s = al::split("hello,world,1,2 2,3 3 3", ',');
