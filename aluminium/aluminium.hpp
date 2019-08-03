@@ -10,4 +10,16 @@
 #include "sort.hpp"
 #include "util.hpp"
 
+namespace al {
+
+using namespace aluminium;
+using namespace aluminium::base64;
+using namespace aluminium::math;
+using namespace aluminium::random;
+using namespace aluminium::search;
+using namespace aluminium::sort;
+using namespace aluminium::util;
+
+}
+
 #endif
