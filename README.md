@@ -21,13 +21,41 @@ $ make
 # Contains (will be changed)
 
 * base64
+    * base64encode
+    * base64encode_url
+    * base64decode
+    * base64decode_url
+
+* csv
+    * WIP
 
 * math
+    * pi
+    * e
+    * factorial
 
 * random
+    * xorshift
+    * LCGs (Linear congruential generators)
 
 * search
+    * linear_search
+    * binary_search
 
 * sort
+    * quick_sort
+    * bubble_sort
+    * comb_sort
+    * insertion_sort
+    * selection_sort
+    * gnome_sort
+    * slow_sort
+    * bucket_sort
+    * stalin_sort
+    * hitler_sort
 
-* utils
+* util
+    * erase_if
+    * log
+    * split
+    * alprint
