@@ -3,6 +3,7 @@
 
 #include <algorithm>
 #include <chrono>
+#include <cstdio>
 #include <fstream>
 #include <iomanip>
 #include <sstream>
@@ -72,6 +73,17 @@ std::vector<std::string> split(const std::string &str, const char sep) {
     }
 
     return result;
+}
+
+// All-purpose print function
+void alprint() {
+    std::cout << std::endl;
+}
+
+template <class Head, class... Tail>
+void alprint(Head&& head, Tail&&... tail) {
+    std::cout << head << " ";
+    alprint(std::forward<Tail>(tail)...);
 }
 
 } // namespace util

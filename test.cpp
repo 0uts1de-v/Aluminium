@@ -75,5 +75,9 @@ int main() {
     std::cout << "1! = " << al::factorial(1) << std::endl;
     std::cout << "18! = " << al::factorial(18) << std::endl;
 
+    al::alprint();
+    al::alprint("a", "bc", 123);
+    al::alprint("d");
+
     return 0;
 }
