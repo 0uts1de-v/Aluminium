@@ -40,19 +40,19 @@ unsigned long long int factorial(const unsigned int n) {
     return ans;
 }
 
-std::vector<unsigned int> enumerate_prime(const unsigned int n) {
-    std::vector<unsigned int> result(n);
+std::vector<unsigned long long int> enumerate_prime(const unsigned long long int n) {
+    std::vector<unsigned long long int> result(n);
     std::iota(result.begin(), result.end(), 0);
-    for (unsigned int i = 2; i * i < n; ++i) {
+    for (unsigned long long int i = 2; i * i < n; ++i) {
         if (result.at(i) < i) continue;
-        for (unsigned int j = i * i; j < n; j += i)
+        for (unsigned long long int j = i * i; j < n; j += i)
             if (result.at(j) == j) result.at(j) = i;
     }
     return result;
 }
 
-std::map<unsigned int, unsigned int> prime_factorization(unsigned int n) {
-    std::map<unsigned int, unsigned int> result{};
+std::map<unsigned long long int, unsigned int> prime_factorization(unsigned long long int n) {
+    std::map<unsigned long long int, unsigned int> result{};
     auto min_factor = enumerate_prime(n + 1);
     while (n > 1) {
         ++result[min_factor.at(n)];
