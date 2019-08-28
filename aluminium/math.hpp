@@ -3,6 +3,8 @@
 
 #include <cmath>
 #include <map>
+#include <numeric>
+#include <vector>
 
 namespace aluminium {
 namespace math {
@@ -38,14 +40,26 @@ unsigned long long int factorial(const unsigned int n) {
     return ans;
 }
 
-/*
-std::vector prime_enum
-
-std::map prime_factorization(const unsigned long long int n) {
-    std::map<unsigned long long int, unsigned long long int> result{};
-    const unsigned int root_n = int(std::sqrt(n)) + 1;
+std::vector<unsigned int> enumerate_prime(const unsigned int n) {
+    std::vector<unsigned int> result(n);
+    std::iota(result.begin(), result.end(), 0);
+    for (unsigned int i = 2; i * i < n; ++i) {
+        if (result.at(i) < i) continue;
+        for (unsigned int j = i * i; j < n; j += i)
+            if (result.at(j) == j) result.at(j) = i;
+    }
+    return result;
 }
-*/
+
+std::map<unsigned int, unsigned int> prime_factorization(unsigned int n) {
+    std::map<unsigned int, unsigned int> result{};
+    auto min_factor = enumerate_prime(n + 1);
+    while (n > 1) {
+        ++result[min_factor.at(n)];
+        n /= min_factor.at(n);
+    }
+    return result;
+}
 
 
 } // namespace math

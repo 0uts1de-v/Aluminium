@@ -79,12 +79,31 @@ int main() {
     al::alprint("a", "bc", 123);
     al::alprint("d");
 
+    std::cout << std::endl;
+
     int n = 10000;
     std::cout << n << ": " << al::count_digit(n) << std::endl;
     n = -1000;
     std::cout << n << ": " << al::count_digit(n) << std::endl;
     n = 0;
     std::cout << n << ": " << al::count_digit(n) << std::endl;
+
+    std::cout << std::endl;
+
+    n = 210;
+    auto facted_1 = al::prime_factorization(n);
+    std::cout << n << ":\n";
+    for (const auto& [key, value] : facted_1) std::cout << key << " => " << value << "\n";
+
+    n = 1024;
+    auto facted_2 = al::prime_factorization(n);
+    std::cout << n << ":\n";
+    for (const auto& [key, value] : facted_2) std::cout << key << " => " << value << "\n";
+
+    n = 152100;
+    auto facted_3 = al::prime_factorization(n);
+    std::cout << n << ":\n";
+    for (const auto& [key, value] : facted_3) std::cout << key << " => " << value << "\n";
 
     return 0;
 }
