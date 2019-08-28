@@ -33,6 +33,8 @@ $ make
     * pi
     * e
     * factorial
+    * count_digit
+    * prime_factorization
 
 * random
     * xorshift
