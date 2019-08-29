@@ -2,10 +2,13 @@
 #define ALUMINIUM_UTIL
 
 #include <algorithm>
+#include <array>
 #include <chrono>
 #include <cstdio>
 #include <fstream>
 #include <iomanip>
+#include <list>
+#include <map>
 #include <sstream>
 #include <string>
 
@@ -81,10 +84,55 @@ void alprint() {
 }
 
 template <class T>
-void alprint(std::vector<T> arr) {
+void alprint(std::vector<T> &arr) {
     std::string output{"["};
     std::ostringstream oss;
     for (const auto &i : arr) oss << i << ", ";
+    output += oss.str();
+    if (output.size() != 1) {
+        output.pop_back();
+        output.pop_back();
+    }
+    output += "]";
+
+    std::cout << output << std:: endl;
+}
+
+template <class T, std::size_t N>
+void alprint(std::array<T, N> &arr) {
+    std::string output{"["};
+    std::ostringstream oss;
+    for (const auto &i : arr) oss << i << ", ";
+    output += oss.str();
+    if (output.size() != 1) {
+        output.pop_back();
+        output.pop_back();
+    }
+    output += "]";
+
+    std::cout << output << std:: endl;
+}
+
+template <class T>
+void alprint(std::list<T> &arr) {
+    std::string output{"["};
+    std::ostringstream oss;
+    for (const auto &i : arr) oss << i << ", ";
+    output += oss.str();
+    if (output.size() != 1) {
+        output.pop_back();
+        output.pop_back();
+    }
+    output += "]";
+
+    std::cout << output << std:: endl;
+}
+
+template <class keyT, class valT>
+void alprint(std::map<keyT, valT> &dic) {
+    std::string output{"["};
+    std::ostringstream oss;
+    for (const auto &[key, value] : dic) oss << key << ": " << value << ", ";
     output += oss.str();
     if (output.size() != 1) {
         output.pop_back();
