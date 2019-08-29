@@ -4,6 +4,7 @@
 #include <cmath>
 #include <map>
 #include <numeric>
+#include <random>
 #include <vector>
 
 namespace aluminium {
@@ -59,6 +60,27 @@ std::map<unsigned long long int, unsigned int> prime_factorization(unsigned long
         n /= min_factor.at(n);
     }
     return result;
+}
+
+unsigned long long int rho(unsigned long long int n) {
+    unsigned long long int x, y, d;
+    x = 2; y = 2; d = 1;
+    std::random_device rd;
+    std::mt19937 mt(rd());
+    auto c = mt() % n;
+    auto f = [&n, &c](unsigned long long int x){return (x * x + c) % n; };
+    while (d == 1) {
+        x = f(x);
+        y = f(f(y));
+        d = std::gcd(x - y, n);
+    }
+
+    if (d == n) {
+        return 0;
+    }
+    else {
+        return d;
+    }
 }
 
 
