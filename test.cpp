@@ -32,9 +32,7 @@ int main() {
     //al::bucket_sort(a.begin(), a.end());
     //al::hitler_sort(a.begin(), a.end());
 
-    for (auto i : a) {
-        std::cout << i << ", " << std::flush;
-    }
+    al::alprint(a);
     //al::stalin_sort(a, stalin);
     /*
     for (auto i : stalin) {
@@ -56,20 +54,19 @@ int main() {
     std::cout << al::base64decode_url("QWx1bWluaXVtOjpiYXNlNjQ") << std::endl;
 
     al::xorshift xs;
+    std::vector<int> randoms(100);
     //al::LCGs lcgs;
     for (int i = 0; i < 100; ++i) {
         //xs.srand(1);
-        std::cout << xs.rand() << ", ";
+        randoms.at(i) = xs.rand();
     }
+    al::alprint(randoms);
     std::cout << std::endl;
 
     //al::log("test", 0);
 
-    std::vector<std::string> s;
-    s = al::split("hello,world,1,2 2,3 3 3", ',');
-    for (const auto &i : s) {
-        std::cout << i << std::endl;
-    }
+    auto s = al::split("hello,world,1,2 2,3 3 3", ',');
+    al::alprint(s);
 
     std::cout << "0! = " << al::factorial(0) << std::endl;
     std::cout << "1! = " << al::factorial(1) << std::endl;

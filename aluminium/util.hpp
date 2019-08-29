@@ -80,6 +80,21 @@ void alprint() {
     std::cout << std::endl;
 }
 
+template <class T>
+void alprint(std::vector<T> arr) {
+    std::string output{"["};
+    std::ostringstream oss;
+    for (const auto &i : arr) oss << i << ", ";
+    output += oss.str();
+    if (output.size() != 1) {
+        output.pop_back();
+        output.pop_back();
+    }
+    output += "]";
+
+    std::cout << output << std:: endl;
+}
+
 template <class Head, class... Tail>
 void alprint(Head&& head, Tail&&... tail) {
     std::cout << head << " ";
