@@ -35,6 +35,7 @@ $ make
     * factorial
     * count_digit
     * prime_factorization
+    * rho
 
 * random
     * xorshift
