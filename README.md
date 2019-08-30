@@ -18,6 +18,12 @@ $ cmake ..
 $ make
 ```
 
+Or...
+
+Include `aluminium/aluminium.hpp`.
+
+To use macro, you have to include `aluminium/macro.hpp`.
+
 # Contains (will be changed)
 
 * base64
@@ -62,3 +68,8 @@ $ make
     * log
     * split
     * alprint
+
+* macro (This header is separeted from aluminium.hpp)
+    * al_FOR (ALUMINIUM_MACRO_FOR)
+    * al_REP (ALUMINIUM_MACRO_REP)
+    * al_LOOP (ALUMINIUM_MACRO_LOOP)
