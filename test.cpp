@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "aluminium/aluminium.hpp"
+#include "aluminium/macro.hpp"
 
 int main() {
     al::hello();
@@ -39,45 +40,52 @@ int main() {
         std::cout << i << ", " << std::flush;
     }
     */
-    std::cout << std::endl;
 
-    std::cout << al::linear_search(a.begin(), a.end(), 50) << std::endl;
-    std::cout << al::linear_search(a.begin(), a.end(), 100) << std::endl;
 
-    std::cout << al::binary_search(a.begin(), a.end(), 50) << std::endl;
-    std::cout << al::binary_search(a.begin(), a.end(), 100) << std::endl;
+    al::alprint();
+    al::alprint(al::linear_search(a.begin(), a.end(), 50));
+    al::alprint(al::linear_search(a.begin(), a.end(), 100));
+    al::alprint(al::binary_search(a.begin(), a.end(), 50));
+    al::alprint(al::binary_search(a.begin(), a.end(), 100));
 
-    std::cout << al::base64encode("al::base64") << std::endl;
-    std::cout << al::base64encode_url("al::base64") << std::endl;
 
-    std::cout << al::base64decode("QWx1bWluaXVtOjpiYXNlNjQ=") << std::endl;
-    std::cout << al::base64decode_url("QWx1bWluaXVtOjpiYXNlNjQ") << std::endl;
+    al::alprint();
+    al::alprint(al::base64encode("al::base64"));
+    al::alprint(al::base64encode_url("al::base64"));
+    al::alprint(al::base64decode("QWx1bWluaXVtOjpiYXNlNjQ="));
+    al::alprint(al::base64decode_url("QWx1bWluaXVtOjpiYXNlNjQ"));
 
+
+    al::alprint();
     al::xorshift xs;
-    std::vector<int> randoms(100);
-    //al::LCGs lcgs;
-    for (int i = 0; i < 100; ++i) {
+    al::LCGs lcgs;
+    std::vector<int> r_xs(10), r_lcgs(10);
+    al_REP (i, 10) {
         //xs.srand(1);
-        randoms.at(i) = xs.rand();
+        r_xs.at(i) = xs.rand();
+        r_lcgs.at(i) = lcgs.rand();
     }
-    al::alprint(randoms);
-    std::cout << std::endl;
+    al::alprint("xorshift:", r_xs);
+    al::alprint("LCGs:", r_lcgs);
 
-    //al::log("test", 0);
 
+    al::alprint();
     auto s = al::split("hello,world,1,2 2,3 3 3", ',');
     al::alprint(s);
 
-    std::cout << "0! = " << al::factorial(0) << std::endl;
-    std::cout << "1! = " << al::factorial(1) << std::endl;
-    std::cout << "18! = " << al::factorial(18) << std::endl;
+
+    al::alprint();
+    al::alprint("0! =", al::factorial(0));
+    al::alprint("1! =", al::factorial(1));
+    al::alprint("18! =", al::factorial(18));
+
 
     al::alprint();
     al::alprint("a", "bc", 123);
     al::alprint("d");
 
-    std::cout << std::endl;
 
+    al::alprint();
     int n = 10000;
     std::cout << n << ": " << al::count_digit(n) << std::endl;
     n = -1000;
@@ -85,26 +93,28 @@ int main() {
     n = 0;
     std::cout << n << ": " << al::count_digit(n) << std::endl;
 
-    std::cout << std::endl;
 
+    al::alprint();
     n = 210;
     auto facted_1 = al::prime_factorization(n);
-    al::alprint(n,":\n",facted_1);
+    al::alprint(n,":",facted_1);
 
     n = 1024;
     auto facted_2 = al::prime_factorization(n);
-    al::alprint(n,":\n",facted_2);
+    al::alprint(n,":",facted_2);
 
     n = 152100;
     auto facted_3 = al::prime_factorization(n);
-    al::alprint(n,":\n",facted_3);
+    al::alprint(n,":",facted_3);
 
+
+    al::alprint();
     n = 36;
     std::vector<int> rho_n(100);
-    for (int i = 0; i < 100; ++i) {
+    al_REP (i, 100) {
         rho_n.at(i) = al::rho(n);
     }
-    al::alprint(n, ": ", rho_n);
+    al::alprint(n, ":", rho_n);
 
     return 0;
 }
