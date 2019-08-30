@@ -63,6 +63,9 @@ std::map<unsigned long long int, unsigned int> prime_factorization(unsigned long
 }
 
 unsigned long long int rho(unsigned long long int n) {
+    if (n == 0) return 0;
+    else if (n == 1) return 1;
+    else if (n == 2) return 2;
     unsigned long long int x, y, d;
     x = 2; y = 2; d = 1;
     std::random_device rd;
