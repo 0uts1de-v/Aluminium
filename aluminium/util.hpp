@@ -6,6 +6,7 @@
 #include <chrono>
 #include <cstdio>
 #include <fstream>
+#include <iterator>
 #include <iomanip>
 #include <list>
 #include <map>
@@ -78,9 +79,30 @@ std::vector<std::string> split(const std::string &str, const char sep) {
     return result;
 }
 
+// get number of elements in C-style array
+template <class T, std::size_t S>
+std::size_t array_length(const T (&)[S]) {
+    return S;
+}
+
 // All-purpose print function
 void alprint() {
     std::cout << std::endl;
+}
+
+template <class T, std::size_t S>
+void alprint(T (&arr)[S]) {
+    std::string output{"["};
+    std::ostringstream oss;
+    for (const auto &i : arr) oss << i << ", ";
+    output += oss.str();
+    if (output.size() != 1) {
+        output.pop_back();
+        output.pop_back();
+    }
+    output += "]";
+
+    std::cout << output << std:: endl;
 }
 
 template <class T>

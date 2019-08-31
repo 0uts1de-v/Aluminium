@@ -81,17 +81,13 @@ int main() {
 
 
     al::alprint();
-    al::alprint("a", "bc", 123);
-    al::alprint("d");
-
-
-    al::alprint();
     int n = 10000;
-    std::cout << n << ": " << al::count_digit(n) << std::endl;
+
+    al::alprint(n, ":", al::count_digit(n));
     n = -1000;
-    std::cout << n << ": " << al::count_digit(n) << std::endl;
+    al::alprint(n, ":", al::count_digit(n));
     n = 0;
-    std::cout << n << ": " << al::count_digit(n) << std::endl;
+    al::alprint(n, ":", al::count_digit(n));
 
 
     al::alprint();
