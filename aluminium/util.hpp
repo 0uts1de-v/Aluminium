@@ -90,23 +90,17 @@ void alprint() {
     std::cout << std::endl;
 }
 
-template <class T, std::size_t S>
-void alprint(T (&arr)[S]) {
-    std::string output{"["};
-    std::ostringstream oss;
-    for (const auto &i : arr) oss << i << ", ";
-    output += oss.str();
-    if (output.size() != 1) {
-        output.pop_back();
-        output.pop_back();
-    }
-    output += "]";
-
-    std::cout << output << std:: endl;
+void alprint_sub(const char *str) {
+    std::cout << str << " ";
 }
 
 template <class T>
-void alprint(std::vector<T> &arr) {
+void alprint_sub(T var) {
+    std::cout << var << " ";
+}
+
+template <class T, std::size_t S>
+void alprint_sub(T (&arr)[S]) {
     std::string output{"["};
     std::ostringstream oss;
     for (const auto &i : arr) oss << i << ", ";
@@ -115,13 +109,28 @@ void alprint(std::vector<T> &arr) {
         output.pop_back();
         output.pop_back();
     }
-    output += "]";
+    output += "] ";
 
-    std::cout << output << std:: endl;
+    std::cout << output;
+}
+
+template <class T>
+void alprint_sub(std::vector<T> &arr) {
+    std::string output{"["};
+    std::ostringstream oss;
+    for (const auto &i : arr) oss << i << ", ";
+    output += oss.str();
+    if (output.size() != 1) {
+        output.pop_back();
+        output.pop_back();
+    }
+    output += "] ";
+
+    std::cout << output;
 }
 
 template <class T, std::size_t N>
-void alprint(std::array<T, N> &arr) {
+void alprint_sub(std::array<T, N> &arr) {
     std::string output{"["};
     std::ostringstream oss;
     for (const auto &i : arr) oss << i << ", ";
@@ -130,13 +139,13 @@ void alprint(std::array<T, N> &arr) {
         output.pop_back();
         output.pop_back();
     }
-    output += "]";
+    output += "] ";
 
-    std::cout << output << std:: endl;
+    std::cout << output;
 }
 
 template <class T>
-void alprint(std::list<T> &arr) {
+void alprint_sub(std::list<T> &arr) {
     std::string output{"["};
     std::ostringstream oss;
     for (const auto &i : arr) oss << i << ", ";
@@ -145,13 +154,13 @@ void alprint(std::list<T> &arr) {
         output.pop_back();
         output.pop_back();
     }
-    output += "]";
+    output += "] ";
 
-    std::cout << output << std:: endl;
+    std::cout << output;
 }
 
 template <class keyT, class valT>
-void alprint(std::map<keyT, valT> &dic) {
+void alprint_sub(std::map<keyT, valT> &dic) {
     std::string output{"["};
     std::ostringstream oss;
     for (const auto &[key, value] : dic) oss << key << ": " << value << ", ";
@@ -160,15 +169,16 @@ void alprint(std::map<keyT, valT> &dic) {
         output.pop_back();
         output.pop_back();
     }
-    output += "]";
+    output += "] ";
 
-    std::cout << output << std:: endl;
+    std::cout << output;
 }
 
 template <class Head, class... Tail>
 void alprint(Head&& head, Tail&&... tail) {
-    std::cout << head << " ";
+    alprint_sub(head);
     alprint(std::forward<Tail>(tail)...);
+    //if (sizeof...(tail) == 1) std::cout << std::endl;
 }
 
 } // namespace util
