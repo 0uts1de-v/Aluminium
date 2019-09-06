@@ -62,7 +62,7 @@ std::string base64decode(std::string code) {
         bitstr += std::bitset<6>(table(i)).to_string();
     }
 
-    bitstr.erase(bitstr.size() - 1 - bitstr.size() % 8, bitstr.size() % 8);
+    bitstr.erase(bitstr.end() - (bitstr.size() % 8), bitstr.end());
 
     for (unsigned int i = 0; i < bitstr.size(); i += 8) {
         decoded += char(std::stoi(bitstr.substr(i, 8), nullptr, 2));
@@ -79,7 +79,7 @@ std::string base64decode_url(std::string code) {
         bitstr += std::bitset<6>(table(i)).to_string();
     }
 
-    bitstr.erase(bitstr.size() - 1 - bitstr.size() % 8, bitstr.size() % 8);
+    bitstr.erase(bitstr.end() - (bitstr.size() % 8), bitstr.end());
 
     for (unsigned int i = 0; i < bitstr.size(); i += 8) {
         decoded += char(std::stoi(bitstr.substr(i, 8), nullptr, 2));
