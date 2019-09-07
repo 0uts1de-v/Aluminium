@@ -11,5 +11,4 @@
 #define al_REP(i, n) ALUMINIUM_MACRO_REP(i, n)
 #define al_LOOP(n) ALUMINIUM_MACRO_LOOP(n)
 
-
 #endif

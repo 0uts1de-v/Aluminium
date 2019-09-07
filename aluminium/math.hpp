@@ -19,7 +19,8 @@ double round_n(double number, const unsigned int n) {
 
 unsigned int count_digit(long long int n) {
     unsigned int digits = 0;
-    for (; n != 0; n /= 10, ++digits) {}
+    for (; n != 0; n /= 10, ++digits) {
+    }
     return digits;
 }
 
@@ -45,9 +46,11 @@ std::vector<unsigned long long int> enumerate_prime(const unsigned long long int
     std::vector<unsigned long long int> result(n);
     std::iota(result.begin(), result.end(), 0);
     for (unsigned long long int i = 2; i * i < n; ++i) {
-        if (result.at(i) < i) continue;
+        if (result.at(i) < i)
+            continue;
         for (unsigned long long int j = i * i; j < n; j += i)
-            if (result.at(j) == j) result.at(j) = i;
+            if (result.at(j) == j)
+                result.at(j) = i;
     }
     return result;
 }
@@ -63,15 +66,20 @@ std::map<unsigned long long int, unsigned int> prime_factorization(unsigned long
 }
 
 unsigned long long int rho(unsigned long long int n) {
-    if (n == 0) return 0;
-    else if (n == 1) return 1;
-    else if (n == 2) return 2;
+    if (n == 0)
+        return 0;
+    else if (n == 1)
+        return 1;
+    else if (n == 2)
+        return 2;
     unsigned long long int x, y, d;
-    x = 2; y = 2; d = 1;
+    x = 2;
+    y = 2;
+    d = 1;
     std::random_device rd;
     std::mt19937 mt(rd());
     auto c = mt() % n;
-    auto f = [&n, &c](unsigned long long int x){return (x * x + c) % n; };
+    auto f = [&n, &c](unsigned long long int x) { return (x * x + c) % n; };
     while (d == 1) {
         x = f(x);
         y = f(f(y));
@@ -80,12 +88,10 @@ unsigned long long int rho(unsigned long long int n) {
 
     if (d == n) {
         return 0;
-    }
-    else {
+    } else {
         return d;
     }
 }
-
 
 } // namespace math
 } // namespace aluminium

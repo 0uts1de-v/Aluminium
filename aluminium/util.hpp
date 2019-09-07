@@ -6,8 +6,8 @@
 #include <chrono>
 #include <cstdio>
 #include <fstream>
-#include <iterator>
 #include <iomanip>
+#include <iterator>
 #include <list>
 #include <map>
 #include <sstream>
@@ -103,7 +103,8 @@ template <class T, std::size_t S>
 void alprint_sub(T (&arr)[S]) {
     std::string output{"["};
     std::ostringstream oss;
-    for (const auto &i : arr) oss << i << ", ";
+    for (const auto &i : arr)
+        oss << i << ", ";
     output += oss.str();
     if (output.size() != 1) {
         output.pop_back();
@@ -118,7 +119,8 @@ template <class T>
 void alprint_sub(std::vector<T> &arr) {
     std::string output{"["};
     std::ostringstream oss;
-    for (const auto &i : arr) oss << i << ", ";
+    for (const auto &i : arr)
+        oss << i << ", ";
     output += oss.str();
     if (output.size() != 1) {
         output.pop_back();
@@ -133,7 +135,8 @@ template <class T, std::size_t N>
 void alprint_sub(std::array<T, N> &arr) {
     std::string output{"["};
     std::ostringstream oss;
-    for (const auto &i : arr) oss << i << ", ";
+    for (const auto &i : arr)
+        oss << i << ", ";
     output += oss.str();
     if (output.size() != 1) {
         output.pop_back();
@@ -148,7 +151,8 @@ template <class T>
 void alprint_sub(std::list<T> &arr) {
     std::string output{"["};
     std::ostringstream oss;
-    for (const auto &i : arr) oss << i << ", ";
+    for (const auto &i : arr)
+        oss << i << ", ";
     output += oss.str();
     if (output.size() != 1) {
         output.pop_back();
@@ -163,7 +167,8 @@ template <class keyT, class valT>
 void alprint_sub(std::map<keyT, valT> &dic) {
     std::string output{"["};
     std::ostringstream oss;
-    for (const auto &[key, value] : dic) oss << key << ": " << value << ", ";
+    for (const auto &[key, value] : dic)
+        oss << key << ": " << value << ", ";
     output += oss.str();
     if (output.size() != 1) {
         output.pop_back();
@@ -175,7 +180,7 @@ void alprint_sub(std::map<keyT, valT> &dic) {
 }
 
 template <class Head, class... Tail>
-void alprint(Head&& head, Tail&&... tail) {
+void alprint(Head &&head, Tail &&... tail) {
     alprint_sub(head);
     alprint(std::forward<Tail>(tail)...);
 }

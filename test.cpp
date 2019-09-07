@@ -42,13 +42,11 @@ int main() {
     }
     */
 
-
     al::alprint();
     al::alprint(al::linear_search(a.begin(), a.end(), 50));
     al::alprint(al::linear_search(a.begin(), a.end(), 100));
     al::alprint(al::binary_search(a.begin(), a.end(), 50));
     al::alprint(al::binary_search(a.begin(), a.end(), 100));
-
 
     al::alprint();
     al::alprint(al::base64encode("al::base64"));
@@ -56,12 +54,11 @@ int main() {
     al::alprint(al::base64decode("QWx1bWluaXVtOjpiYXNlNjQ="));
     al::alprint(al::base64decode_url("QWx1bWluaXVtOjpiYXNlNjQ"));
 
-
     al::alprint();
     al::xorshift xs;
     al::LCGs lcgs;
     std::vector<int> r_xs(10), r_lcgs(10);
-    al_REP (i, 10) {
+    al_REP(i, 10) {
         //xs.srand(1);
         r_xs.at(i) = xs.rand();
         r_lcgs.at(i) = lcgs.rand();
@@ -69,17 +66,14 @@ int main() {
     al::alprint("xorshift:", r_xs);
     al::alprint("LCGs:", r_lcgs);
 
-
     al::alprint();
     auto s = al::split("hello,world,1,2 2,3 3 3", ',');
     al::alprint(s);
-
 
     al::alprint();
     al::alprint("0! =", al::factorial(0));
     al::alprint("1! =", al::factorial(1));
     al::alprint("18! =", al::factorial(18));
-
 
     al::alprint();
     int n = 10000;
@@ -90,25 +84,23 @@ int main() {
     n = 0;
     al::alprint(n, ":", al::count_digit(n));
 
-
     al::alprint();
     n = 210;
     auto facted_1 = al::prime_factorization(n);
-    al::alprint(n,":",facted_1);
+    al::alprint(n, ":", facted_1);
 
     n = 1024;
     auto facted_2 = al::prime_factorization(n);
-    al::alprint(n,":",facted_2);
+    al::alprint(n, ":", facted_2);
 
     n = 152100;
     auto facted_3 = al::prime_factorization(n);
-    al::alprint(n,":",facted_3);
-
+    al::alprint(n, ":", facted_3);
 
     al::alprint();
     n = 36;
     std::vector<int> rho_n(100);
-    al_REP (i, 100) {
+    al_REP(i, 100) {
         rho_n.at(i) = al::rho(n);
     }
     al::alprint(n, ":", rho_n);
