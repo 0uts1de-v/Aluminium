@@ -64,7 +64,7 @@ std::uint32_t LCGs::rand() {
     return x;
 }
 
-std::uint32_t operator()() {
+std::uint32_t LCGs::operator()() {
     return rand();
 }
 

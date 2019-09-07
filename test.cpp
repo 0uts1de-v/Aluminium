@@ -55,7 +55,7 @@ int main() {
     al::alprint(al::base64decode_url("QWx1bWluaXVtOjpiYXNlNjQ"));
 
     al::alprint();
-    al::xorshift xs;
+    al::xorShift xs;
     al::LCGs lcgs;
     std::vector<int> r_xs(10), r_lcgs(10);
     al_REP(i, 10) {
@@ -63,7 +63,7 @@ int main() {
         r_xs.at(i) = xs.rand();
         r_lcgs.at(i) = lcgs.rand();
     }
-    al::alprint("xorshift:", r_xs);
+    al::alprint("xorShift:", r_xs);
     al::alprint("LCGs:", r_lcgs);
 
     al::alprint();
