@@ -178,7 +178,6 @@ template <class Head, class... Tail>
 void alprint(Head&& head, Tail&&... tail) {
     alprint_sub(head);
     alprint(std::forward<Tail>(tail)...);
-    //if (sizeof...(tail) == 1) std::cout << std::endl;
 }
 
 } // namespace util

@@ -21,7 +21,8 @@ int main() {
     std::copy(b.begin(), b.end(), std::back_inserter(a));
     std::random_device seed_gen;
     std::mt19937 engine(seed_gen());
-    std::shuffle(a.begin(), a.end(), engine);
+
+    al::FisheirYates_shuffle(a.begin(), a.end(), engine);
     al::quick_sort(a.begin(), a.end());
     //al::bubble_sort(a.begin(), a.end());
     //al::comb_sort(a.begin(), a.end());
