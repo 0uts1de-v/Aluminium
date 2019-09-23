@@ -12,6 +12,7 @@
 #include <map>
 #include <sstream>
 #include <string>
+#include <vector>
 
 namespace aluminium {
 namespace util {
