@@ -2,6 +2,7 @@
 #define ALUMINIUM
 
 #include "base64.hpp"
+#include "complex.hpp"
 #include "hello.hpp"
 #include "loading.hpp"
 #include "math.hpp"
@@ -21,6 +22,7 @@ using namespace aluminium::search;
 using namespace aluminium::shuffle;
 using namespace aluminium::sort;
 using namespace aluminium::util;
+using namespace aluminium::complex;
 
 } // namespace al
 

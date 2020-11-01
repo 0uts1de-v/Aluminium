@@ -36,11 +36,11 @@ int main() {
 
     al::alprint(a);
     //al::stalin_sort(a, stalin);
-    /*
+    
     for (auto i : stalin) {
         std::cout << i << ", " << std::flush;
     }
-    */
+    
 
     al::alprint();
     al::alprint(al::linear_search(a.begin(), a.end(), 50));
@@ -104,6 +104,11 @@ int main() {
         rho_n.at(i) = al::rho(n);
     }
     al::alprint(n, ":", rho_n);
+
+    al::complex_ c;
+    c.r(1);
+    c.i(1.7320508);
+    al::alprint(c.r(), c.i(), c.abs(), c.arg());
 
     return 0;
 }
