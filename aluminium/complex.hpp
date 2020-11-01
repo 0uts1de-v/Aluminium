@@ -40,12 +40,25 @@ class complex_ {
         m_arg = 0;
     }
 
+    complex_(const complex_ &x) {
+        m_r = x.r();
+        m_i = x.i();
+        m_abs = x.abs();
+        m_arg = x.arg();
+    }
+
+    complex_(const long double &r, const long double &i) {
+        m_r = r;
+        m_i = i;
+        compute();
+    }
+
     // operator
-    complex_ &operator=(const complex_ &orig) {
-        m_r = orig.r();
-        m_i = orig.i();
-        m_abs = orig.abs();
-        m_arg = orig.arg();
+    complex_ &operator=(const complex_ &x) {
+        m_r = x.r();
+        m_i = x.i();
+        m_abs = x.abs();
+        m_arg = x.arg();
         return *this;
     }
 
@@ -61,6 +74,18 @@ class complex_ {
         return *this;
     }
 
+    complex_ operator-(const complex_ &x) {
+        complex_ ret;
+        ret.r(m_r - x.r());
+        ret.i(m_i - x.i());
+        return ret;
+    }
+
+    complex_ &operator-=(const complex_ &x) {
+        *this = *this - x;
+        return *this;
+    }
+
     complex_ operator*(const complex_ &x) {
         complex_ ret;
         ret.r(m_r * x.r() - m_i * x.i());
@@ -70,6 +95,18 @@ class complex_ {
 
     complex_ &operator*=(const complex_ &x) {
         *this = *this * x;
+        return *this;
+    }
+
+    complex_ operator/(const complex_ &x) {
+        complex_ ret;
+        ret = *this * x.conjugate();
+        ret.abs(ret.abs() / (x.abs() * x.abs()));
+        return ret;
+    }
+
+    complex_ &operator/=(const complex_ &x) {
+        *this = *this / x;
         return *this;
     }
 
@@ -110,6 +147,11 @@ class complex_ {
         m_r = m_abs * cos(m_arg);
         m_i = m_abs * sin(m_arg);
         return m_arg;
+    }
+
+    const complex_ conjugate() const {
+        complex_ ret(m_r, m_i * -1);
+        return ret;
     }
 
     void compute() {
